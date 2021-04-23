@@ -1,0 +1,1 @@
+alter table washing.machine alter place_id set not null;

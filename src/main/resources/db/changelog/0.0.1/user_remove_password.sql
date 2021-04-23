@@ -1,0 +1,1 @@
+alter table common.user drop column password;

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd
+    http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+	
+<!-- 	<changeSet id="0.0.1_000" author="dulyts" context="default" > -->
+<!-- 		<sqlFile path="0.0.1/test.sql" relativeToChangelogFile="true" endDelimiter=";" stripComments="true" /> -->
+<!-- 		<comment>liquibase test</comment> -->
+<!-- 	</changeSet> -->
+
+	<changeSet id="0.0.1_001" author="dulyts" context="default" >
+		<sqlFile path="0.0.1/issue_response.sql" relativeToChangelogFile="true" endDelimiter=";" stripComments="true" />
+		<comment>Hiba visszajelzéshez szükséges mezők</comment>
+	</changeSet>
+	
+	<changeSet id="0.0.1_002" author="dulyts" context="default" >
+		<sqlFile path="0.0.1/create_raceRoomRequestTable.sql" relativeToChangelogFile="true" endDelimiter=";" stripComments="true" />
+		<comment>Versenyjelentkezés tábla</comment>
+	</changeSet>
+	
+	<changeSet id="0.0.1_003" author="dulyts" context="default" >
+		<sqlFile path="0.0.1/place_building_nullable.sql" relativeToChangelogFile="true" endDelimiter=";" stripComments="true" />
+		<comment>A Place entitásban a building lehet null (olyan helyeken ahol pl.: csak 1 épület van)</comment>
+	</changeSet>
+	
+	<changeSet id="0.0.1_004" author="dulyts" context="default" >
+		<sqlFile path="0.0.1/add_unique_constraint_to_raceRoomRequest.sql" relativeToChangelogFile="true" endDelimiter=";" stripComments="true" />
+		<comment>Egy periódusban egy felhasználó csak 1 request-et adhat le.</comment>
+	</changeSet>
+	
+	<changeSet id="0.0.1_005" author="dulyts" context="default" >
+		<sqlFile path="0.0.1/add_adk_rooms.sql" relativeToChangelogFile="true" endDelimiter=";" stripComments="true" />
+		<comment>ADK szpbák hozzáadása</comment>
+	</changeSet>
+	
+	<changeSet id="0.0.1_006" author="dulyts" context="default" >
+		<sqlFile path="0.0.1/add_kuk_rooms.sql" relativeToChangelogFile="true" endDelimiter=";" stripComments="true" />
+		<comment>KUK szobák hozzáadása</comment>
+	</changeSet>
+	
+	<changeSet id="0.0.1_007" author="dulyts" context="default" >
+		<sqlFile path="0.0.1/room_request_user_period.sql" relativeToChangelogFile="true" endDelimiter=";" stripComments="true" />
+		<comment>Szobabeosztási idöszak hoz felhasználók rendelése</comment>
+	</changeSet>
+	
+	<changeSet id="0.0.1_008" author="dulyts" context="default" >
+		<sqlFile path="0.0.1/new_event_tracker_table.sql" relativeToChangelogFile="true" endDelimiter=";" stripComments="true" />
+		<comment>Átdolgozott esemény adatok</comment>
+	</changeSet>
+	
+	<changeSet id="0.0.1_009" author="dulyts" context="default" >
+		<sqlFile path="0.0.1/add_dormitory_to_event.sql" relativeToChangelogFile="true" endDelimiter=";" stripComments="true" />
+		<comment>Kimaradt dormitory_id hozzáadása az eseményhez</comment>
+	</changeSet>
+	
+	<changeSet id="0.0.1_010" author="dulyts" context="default" >
+		<sqlFile path="0.0.1/create_doorman_tables.sql" relativeToChangelogFile="true" endDelimiter=";" stripComments="true" />
+		<comment>Portás modul táblák létrehozása</comment>
+	</changeSet>
+	
+	<changeSet id="0.0.1_011" author="dulyts" context="default" >
+		<sqlFile path="0.0.1/washing_machine_place_not_null.sql" relativeToChangelogFile="true" endDelimiter=";" stripComments="true" />
+		<comment>Mosógépek helye kötelező</comment>
+	</changeSet>
+	
+	<changeSet id="0.0.1_012" author="dulyts" context="default" >
+		<sqlFile path="0.0.1/add_elteId_to_user.sql" relativeToChangelogFile="true" endDelimiter=";" stripComments="true" />
+		<comment>elteId tárolása</comment>
+	</changeSet>
+	
+	<changeSet id="0.0.1_013" author="dulyts" context="default" >
+		<sqlFile path="0.0.1/user_remove_password.sql" relativeToChangelogFile="true" endDelimiter=";" stripComments="true" />
+		<comment>Nem használt jelszó törlése</comment>
+	</changeSet>
+	
+	<changeSet id="0.0.1_014" author="dulyts" context="default" >
+		<sqlFile path="0.0.1/system_properties.sql" relativeToChangelogFile="true" endDelimiter=";" stripComments="true" />
+		<comment>Rendszer szintű paraméterek</comment>
+	</changeSet>
+	
+	<changeSet id="0.0.1_015" author="dulyts" context="default" >
+		<sqlFile path="0.0.1/change_room_type_to_code.sql" relativeToChangelogFile="true" endDelimiter=";" stripComments="true" />
+		<comment>Szoba típusok leszerélése Code-ra</comment>
+	</changeSet>
+	
+<!-- 	TODO liquibase promise, this fixed in 3.6.0 -->
+<!-- 	<changeSet id="0.0.1_016" author="dulyts" context="default" > -->
+<!-- 		<sqlFile path="0.0.1/bi_issue_trigger.sql" relativeToChangelogFile="true" stripComments="true" endDelimiter="/;" splitStatements="false" /> -->
+<!-- 		<comment>IssueNumber trigger</comment> -->
+<!-- 	</changeSet> -->
+
+	<changeSet id="0.0.1_016" author="dulyts" context="default" >
+		<sqlFile path="0.0.1/guest_reception_table.sql" relativeToChangelogFile="true" endDelimiter=";" stripComments="true" />
+		<comment>Guest táblák létrehozása</comment>
+	</changeSet>
+
+	<changeSet id="0.0.1_017" author="dulyts" context="default" >
+		<sqlFile path="0.0.1/create_user_associate.sql" relativeToChangelogFile="true" endDelimiter=";" stripComments="true" />
+		<comment>Felhasználó nem és kolégium összerendelés</comment>
+	</changeSet>
+
+	<changeSet id="0.0.1_018" author="dulyts" context="default" >
+		<sqlFile path="0.0.1/2019_11_29_alter_user_table.sql" relativeToChangelogFile="true" endDelimiter=";" stripComments="true" />
+		<comment>Felhasználó tábla neptun api kompatibilitás</comment>
+	</changeSet>
+	
+	
+</databaseChangeLog>

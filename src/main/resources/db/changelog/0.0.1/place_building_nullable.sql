@@ -1,0 +1,1 @@
+alter table common.place alter building drop not null;
